@@ -1,0 +1,11 @@
+services:
+  fiverr-scraper:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      # Optional: your own connection is enough to start. Fiverr can block one IP
+      # for a few hours after about 150 calls: for volume, set a proxy.
+      # - FIVERR_PROXY=http://user:pass@host:port
